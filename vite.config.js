@@ -12,14 +12,14 @@ export default defineConfig({
       
       // includeAssets: File da includere nel precache (cache iniziale)
       // Questi file saranno disponibili offline immediatamente
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'qr-code.png'],
-      
+      includeAssets: ['jarbatoQrCode.png', 'spades.png', 'vite.svg'],
+
       manifest: {
-        name: 'Digital Card - La Mia Tessera',
-        short_name: 'DigitalCard',
-        description: 'Tessera digitale personale con QR code',
-        theme_color: '#1a1a1a',
-        background_color: '#ffffff',
+        name: 'Jarbato Piercer Digital Card',
+        short_name: 'Jarbato Card',
+        description: 'Digital business card di Jarbato Piercer - Junior React Developer',
+        theme_color: '#000000',
+        background_color: '#000000',
         display: 'standalone', // Importante: apre come app nativa
         orientation: 'portrait', // Forza orientamento verticale
         scope: '/',
@@ -28,19 +28,19 @@ export default defineConfig({
         // Icons: servono diverse dimensioni per vari dispositivi
         icons: [
           {
-            src: 'pwa-192x192.png',
+            src: 'spades.png',
             sizes: '192x192',
             type: 'image/png',
             purpose: 'any' // 'any' = icona standard
           },
           {
-            src: 'pwa-512x512.png',
+            src: 'spades.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any'
           },
           {
-            src: 'pwa-512x512.png',
+            src: 'spades.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'maskable' // 'maskable' = per adaptive icons Android
