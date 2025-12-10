@@ -5,7 +5,6 @@ import "./DigitalCard.css";
 // IMPORTANTE: Metti il file qr-code.png nella cartella public/
 import qrCodeImage from "/jarbatoQrCode.png";
 import spades from "/spades.png";
-import { color } from "motion";
 
 const DigitalCard = () => {
   const [isFlipped, setIsFlipped] = useState(false);
