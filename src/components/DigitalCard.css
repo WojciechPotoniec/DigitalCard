@@ -1,0 +1,172 @@
+.card-container {
+  position: relative;
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  perspective: 1000px; /* Abilita la prospettiva 3D */
+}
+
+/* Wrapper per l'effetto flip */
+.card-wrapper {
+  position: relative;
+  width: 250px;
+  height: 450px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  cursor: pointer;
+  will-change: transform; /* Ottimizza le performance dell'animazione */
+}
+
+/* Quando è flippata, ruota di 180° */
+.card-wrapper.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden; /* Nasconde il retro quando non visibile */
+  -webkit-backface-visibility: hidden; /* Safari */
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden; /* Nasconde il retro quando non visibile */
+  -webkit-backface-visibility: hidden; /* Safari */
+  transform: rotateY(180deg); /* Già ruotata di 180° */
+}
+.card-border {
+  position: relative;
+  padding: 1rem;
+  width: 350px;
+  height: 600px;
+  margin-bottom: 1rem;
+  background: black;
+  border: 1px solid white;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Immagini spades */
+.card-border > img {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  filter: invert(1) brightness(2);
+  z-index: 2;
+}
+
+/* Spades in alto a sinistra (nella curva concava) */
+.card-border > img:first-of-type {
+  left: -25px;
+  top: -25px;
+}
+
+/* Spades in basso a destra (nella curva concava) */
+.card-border > img:last-of-type {
+  right: -25px;
+  bottom: -25px;
+  rotate: 180deg;
+}
+
+/* Angolo concavo in alto a sinistra */
+.card-border::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 50px;
+  height: 50px;
+  background: black;
+  border-radius: 0 0 50px 0;
+  box-shadow: 1px 1px 0 0 white;
+}
+
+/* Angolo concavo in basso a destra */
+.card-border::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 50px;
+  height: 50px;
+  background: black;
+  border-radius: 50px 0 0 0;
+  box-shadow: -1px -1px 0 0 white;
+}
+.logo {
+  color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  font-size: 5rem;
+}
+.logo img {
+  width: 275px;
+  height: 275px;
+  rotate: 45deg;
+}
+.author {
+  color: white;
+  text-transform: uppercase;
+}
+
+
+/* Overlay per nascondere il bordo dove esce il QR */
+.card-border-cut-left {
+  position: absolute;
+  left: -1px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 150px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+  z-index: 0;
+}
+
+/* Taglio nel bordo a destra (centro) */
+.card-border-cut-right {
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 150px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+  z-index: 0;
+}
