@@ -202,11 +202,6 @@
     max-width: 300px;
   }
 
-  .card-border > img {
-    width: 40px;
-    height: 40px;
-  }
-
   .card-border > img:first-of-type {
     left: -20px;
     top: -20px;
