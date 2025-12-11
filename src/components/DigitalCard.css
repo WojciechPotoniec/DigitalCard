@@ -70,7 +70,6 @@
 /* Immagini spades */
 .card-border > img {
   position: absolute;
-  /* filter: invert(1) brightness(2); */
   z-index: 2;
 }
 
@@ -120,10 +119,23 @@
   align-items: center;
 }
 
+/* Logo immagine ottimizzata */
+.logo img {
+  max-width: 200px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
 .qrCode img {
   width: 275px;
   height: 275px;
   rotate: 45deg;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 .author {
   color: white;
@@ -189,8 +201,13 @@
   }
 
   .logo img {
-    width: 100%;
-    height: auto;
+    max-width: 180px;
+    max-height: 180px;
+  }
+
+  .qrCode img {
+    width: 200px;
+    height: 200px;
   }
 }
 
@@ -201,6 +218,16 @@
 
   .logo {
     font-size: 3rem;
+  }
+
+  .logo img {
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  .qrCode img {
+    width: 180px;
+    height: 180px;
   }
 
   .card-border > img {
