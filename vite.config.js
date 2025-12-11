@@ -12,7 +12,7 @@ export default defineConfig({
       
       // includeAssets: File da includere nel precache (cache iniziale)
       // Questi file saranno disponibili offline immediatamente
-      includeAssets: ['jarbatoQrCode.png', 'spades.png', 'logo.png'],
+      includeAssets: ['jarbatoQrCode.png', 'spades.png', 'logo.png', 'apple-touch-icon.png'],
 
       manifest: {
         name: 'Jarbato Piercer Digital Card',
@@ -28,19 +28,19 @@ export default defineConfig({
         // Icons: servono diverse dimensioni per vari dispositivi
         icons: [
           {
-            src: 'logo.png',
+            src: 'apple-touch-icon.png',
             sizes: '192x192',
             type: 'image/png',
             purpose: 'any' // 'any' = icona standard
           },
           {
-            src: 'logo.png',
+            src: 'apple-touch-icon.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any'
           },
           {
-            src: 'logo.png',
+            src: 'apple-touch-icon.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'maskable' // 'maskable' = per adaptive icons Android
