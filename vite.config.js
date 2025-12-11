@@ -17,7 +17,7 @@ export default defineConfig({
       manifest: {
         name: 'Jarbato Piercer Digital Card',
         short_name: 'Jarbato Card',
-        description: 'Digital business card di Jarbato Piercer - Junior React Developer',
+        description: 'Digital business card di Jarbato Piercer',
         theme_color: '#000000',
         background_color: '#000000',
         display: 'standalone', // Importante: apre come app nativa
