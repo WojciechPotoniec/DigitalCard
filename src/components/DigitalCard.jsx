@@ -4,6 +4,7 @@ import "./DigitalCard.css";
 // Importa il tuo QR code
 // IMPORTANTE: Metti il file qr-code.png nella cartella public/
 import qrCodeImage from "/jarbatoQrCode.png";
+import logo from "/logo.png";
 import spades from "/spades.png";
 
 const DigitalCard = () => {
@@ -28,7 +29,7 @@ const DigitalCard = () => {
           <div className="card-border">
             <img src={spades} alt="heart of spades" />
             <div className="logo">
-              <p>JP</p>
+              <img src={logo} alt="Jarbato Logo" />
             </div>
             <img src={spades} alt="heart of spades" />
           </div>
@@ -39,7 +40,7 @@ const DigitalCard = () => {
             <div className="card-border-cut-left"></div>
             <div className="card-border-cut-right"></div>
             <img src={spades} alt="heart of spades" />
-            <div className="logo">
+            <div className="qrCode">
               <img src={qrCodeImage} alt="QR Code" />
             </div>
             <img src={spades} alt="heart of spades" />
